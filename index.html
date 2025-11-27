@@ -1,105 +1,229 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simcha Talent Inc</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(135deg, #2F4F4F, #4F6F6F);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2em;
-        }
-        nav {
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-            background-color: white;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #2F4F4F;
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #2F4F4F;
-            color: white;
-        }
-        .hero {
-            background-color: #e8f0f0;
-            padding: 30px;
-            text-align: center;
-            font-size: 1.2em;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .contact-info p {
-            font-size: 1.1em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simcha Talent Inc</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f7f8;
+      color: #333;
+    }
+
+    /* Header & Hero */
+    header {
+      background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2d6a4f;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #95d5b2;
+      color: #000;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    section:nth-child(even) {
+      background-color: #f1f6f5;
+    }
+
+    section h2 {
+      color: #2d6a4f;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: #2d6a4f;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #40916c;
+    }
+
+    /* Donate Section */
+    .donate {
+      text-align: center;
+      background-color: #40916c;
+      color: white;
+      padding: 60px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .donate h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .donate p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2d6a4f;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Simcha Talent Inc</h1>
-        <p>Serving Orange & Rockland Area | Helping Families in Need</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section class="hero">
-        <p>We provide support to families with disabilities, those who have lost a parent, and anyone facing life’s challenges. Our mission is to bring hope and assistance to those in need.</p>
-    </section>
-    <section id="home">
-        <h2>Welcome</h2>
-        <p>Simcha Talent Inc is a nonprofit organization dedicated to helping families in need. We serve the Orange and Rockland area, providing support to families with members who have disabilities, families who have lost a parent, and anyone facing challenges that lead to a depressing state of mind. We are open to helping anybody in need.</p>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Our mission is to bring hope and assistance to those struggling with life’s challenges. Whether it’s emotional support, resources for families with disabilities, or guidance for those coping with loss, Simcha Talent Inc is here to help. We believe in compassion, community, and making a positive impact in people’s lives.</p>
-    </section>
-    <section id="contact" class="contact-info">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:Simchatalent@gmail.com">Simchatalent@gmail.com</a></p>
-        <p>Phone: <a href="tel:+18456414256">845-641-4256</a></p>
-        <p>Address: Orange & Rockland Area</p>
-    </section>
-    <footer>
-        &copy; 2025 Simcha Talent Inc | All Rights Reserved
-    </footer>
+
+<header>
+  <h1>Simcha Talent Inc</h1>
+  <p>Serving the Orange–Rockland Region • Supporting Families Through Life’s Challenges</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#welcome">Welcome</a>
+  <a href="#about">About Us</a>
+  <a href="#donate">Donate</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>Home</h2>
+  <p>Simcha Talent Inc is a nonprofit organization committed to bringing hope, stability, and practical assistance to families in our community. We proudly support:</p>
+  <ul>
+    <li>Families with children or adults with disabilities</li>
+    <li>Families who have lost a parent</li>
+    <li>Individuals and households experiencing emotional, financial, or personal hardship</li>
+  </ul>
+  <p>Our mission is simple: <strong>to lift families up during their toughest moments and restore joy, strength, and dignity.</strong></p>
+</section>
+
+<section id="welcome">
+  <h2>Welcome</h2>
+  <p>At Simcha Talent Inc, we believe no one should face life’s challenges alone. We serve the Orange–Rockland Region with compassion, confidentiality, and a hands-on approach to support.</p>
+  <p>Whether someone is struggling due to disability, loss, emotional overwhelm, or any circumstance that leads to distress, our doors are open. We are here to help any individual or family in need.</p>
+  <p>We provide:</p>
+  <ul>
+    <li>Emotional support and guidance</li>
+    <li>Access to community resources and programs</li>
+    <li>Support for families navigating disability-related challenges</li>
+    <li>Assistance for children and parents coping with loss</li>
+    <li>Emergency help for families facing crisis situations</li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Simcha Talent Inc was founded on the belief that every person deserves support, compassion, and someone to lean on. Our mission is to bring <strong>hope, assistance, and real solutions</strong> to families facing hardship.</p>
+  <p>We value:</p>
+  <ul>
+    <li><strong>Compassion:</strong> Responding with care, understanding, and respect</li>
+    <li><strong>Community:</strong> Building a strong network of support</li>
+    <li><strong>Dignity:</strong> Ensuring every family feels heard and uplifted</li>
+    <li><strong>Impact:</strong> Making a meaningful difference in people’s daily lives</li>
+  </ul>
+</section>
+
+<section id="donate" class="donate">
+  <h2>Support Our Mission</h2>
+  <p>Your donation helps us provide essential services, resources, and emotional support to families in the Orange–Rockland Region. Every contribution makes a difference and brings hope to those who need it most.</p>
+  <a href="https://www.paypal.com/donate" class="button" target="_blank">Donate Now</a>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> <a href="mailto:Simchatalent@gmail.com" class="button">Simchatalent@gmail.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+18456414256" class="button">845-641-4256</a></p>
+  <p><strong>Serving:</strong> The Orange–Rockland Region</p>
+  <p>We are here when you need us. Your challenges matter. Your story matters. Let us help you find the support, stability, and hope you deserve.</p>
+</section>
+
+<footer>
+  &copy; 2025 Simcha Talent Inc | All Rights Reserved
+</footer>
+
 </body>
 </html>
